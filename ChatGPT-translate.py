@@ -53,7 +53,7 @@ def translate(key, target_language, text, use_azure=False, api_base="", deployme
         "role":
         "user",
         "content":
-        f" To {target_language} : \n {text}",
+        f" To {target_language}, Retain the original format. Return only the translation and nothing else:\n {text}",
     }]
     if use_azure:
         completion = openai.ChatCompletion.create(
