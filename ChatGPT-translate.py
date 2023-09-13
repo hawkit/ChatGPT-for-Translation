@@ -48,12 +48,12 @@ def translate(key, target_language, text, use_azure=False, api_base="", deployme
     # Set up the prompt
     messages = [{
         'role': 'system',
-        'content': 'You are a translator assistant.'
+        'content': 'You are a texts localization assistant for App.'
     }, {
         "role":
         "user",
         "content":
-        f" To {target_language}, Retain the original format. Return only the translation and nothing else:\n {text}",
+        f"Localize the following text into {target_language}. Only localize the texts at the right of =. Retain the original format. Return only the translation and nothing else:\n{text}",
     }]
     if use_azure:
         completion = openai.ChatCompletion.create(
