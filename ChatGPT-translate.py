@@ -53,7 +53,7 @@ def translate(key, target_language, text, use_azure=False, api_base="", deployme
         "role":
         "user",
         "content":
-        f"You are a translator assistant. And Here are some examples. [1]. Input: \"My\" = \"My\"; output: \"My\" = \"Mi\"; [2]. Input: \"No result found :(\" = \"No result found :(\"; output: \"No result found :(\" = \"No se encontraron resultados :(\"; Now you understand it, then you start to translate the following texts to {target_language}. Remember don't translate the texts at front of \"=\". Retain the original format. Return only the translation and nothing else: \n{text}",
+        f"You are a translator assistant. And Here are some examples. [1]. Input: \"My\" = \"My\"; output: \"My\" = \"Mi\"; [2]. Input: \"No result found :(\" = \"No result found :(\"; output: \"No result found :(\" = \"No se encontraron resultados :(\"; Now you understand it, then you start to translate the following texts to {target_language}. Remember don't translate the texts at front of \"=\". Retain the original format: \n{text}",
     }]
     if use_azure:
         completion = openai.ChatCompletion.create(
